@@ -1,0 +1,30 @@
+diff -up ATLAS/CONFIG/src/probe_comp.c.s390 ATLAS/CONFIG/src/probe_comp.c
+--- ATLAS/CONFIG/src/probe_comp.c.s390	2009-12-10 13:18:24.000000000 +0100
++++ ATLAS/CONFIG/src/probe_comp.c	2009-12-10 13:19:17.000000000 +0100
+@@ -535,7 +535,11 @@ char *GetPtrbitsFlag(enum OSTYPE OS, enu
+    else if (ptrbits == 64)
+      sp = "-m64";
+    else if (ptrbits == 32)
++#ifdef __s390__
++     sp = "-m31";
++#else
+      sp = "-m32";
++#endif
+    return(sp);
+ }
+ char *GetStandardCompName(char *comp)
+diff -up ATLAS/CONFIG/src/SpewMakeInc.c.s390 ATLAS/CONFIG/src/SpewMakeInc.c
+--- ATLAS/CONFIG/src/SpewMakeInc.c.s390	2009-12-10 13:22:16.000000000 +0100
++++ ATLAS/CONFIG/src/SpewMakeInc.c	2009-12-10 13:22:19.000000000 +0100
+@@ -368,7 +368,11 @@ char *GetPtrbitsFlag(enum OSTYPE OS, enu
+    else if (ptrbits == 64)
+      sp = "-m64";
+    else if (ptrbits == 32)
++#ifdef __s390__
++     sp = "-m31";
++#else
+      sp = "-m32";
++#endif
+    return(sp);
+ }
+ 
