@@ -19,8 +19,6 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  gcc-gfortran lapack-devel 
 
-Requires:       kernel >= 2.6.30
-
 %description
 The ATLAS (Automatically Tuned Linear Algebra Software) project is an
 ongoing research effort focusing on applying empirical techniques in
