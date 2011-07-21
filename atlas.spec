@@ -17,7 +17,7 @@ Patch0:		atlas-fedora_shared.patch
 Patch1:		atlas-s390-m31.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
-BuildRequires:  gcc-gfortran lapack-devel
+BuildRequires:  gcc-gfortran lapack-devel kernel
 
 %description
 The ATLAS (Automatically Tuned Linear Algebra Software) project is an
